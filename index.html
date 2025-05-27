@@ -1,12 +1,309 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eu desafio todos os deuses da macumba a me macumbar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kauã Soares | Portfólio</title>
+  <meta name="description" content="Portfólio moderno de Kauã Soares com projetos em redes e computação em nuvem." />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: #f1f5f9;
+      --header-bg: #1e293b;
+      --card-bg: #1e293b;
+      --accent-color: #38bdf8;
+      --highlight-color: #fbbf24;
+      --footer-color: #94a3b8;
+    }
+    body.light-theme {
+      --bg-color: #f1f5f9;
+      --text-color: #0f172a;
+      --header-bg: #e2e8f0;
+      --card-bg: #ffffff;
+      --accent-color: #0ea5e9;
+      --highlight-color: #ca8a04;
+      --footer-color: #475569;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--header-bg);
+      padding: 2rem;
+      text-align: center;
+      animation: fadeInDown 1s ease-out;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    nav {
+      margin-top: 1rem;
+      flex: 1 1 100%;
+      text-align: center;
+    }
+    nav a {
+      color: var(--text-color);
+      margin: 0 1rem;
+      text-decoration: none;
+      position: relative;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    nav a::before {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background: var(--accent-color);
+      transition: width 0.3s;
+    }
+    nav a:hover::before {
+      width: 100%;
+    }
+    .header-controls {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .theme-toggle, .lang-toggle {
+      background: none;
+      border: 2px solid var(--accent-color);
+      padding: 0.4rem 0.8rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      color: var(--accent-color);
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: background 0.3s, color 0.3s;
+      font-size: 0.9rem;
+    }
+    .theme-toggle:hover, .lang-toggle:hover {
+      background: var(--accent-color);
+      color: var(--bg-color);
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.4s, background 0.3s, color 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+    .card h3 {
+      color: var(--highlight-color);
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background: var(--header-bg);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--footer-color);
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    ul.badges {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    ul.badges li img {
+      height: 40px;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+      transition: transform 0.3s;
+      cursor: default;
+    }
+    ul.badges li img:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-     <h1>MEU BLOG SOBRE O KRATOS ANTI-MACUMBA</h1>
-     <img src="./images/Captura de tela 2025-03-13 160923.png">
+  <header>
+    <h1 data-pt="Kauã Soares" data-en="Kaua Soares">Kauã Soares</h1>
+
+    <nav>
+      <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+      <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
+      <a href="#certificacoes" data-pt="Certificações" data-en="Certifications">Certificações</a>
+      <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+    </nav>
+
+    <div class="header-controls">
+      <button class="theme-toggle" aria-label="Toggle theme" title="Alternar Tema" onclick="toggleTheme()">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+
+      <button class="lang-toggle" aria-label="Idioma Português" title="Mudar para Português" onclick="setLanguage('pt')" id="btn-pt" style="font-weight: bold;">PT</button>
+      <button class="lang-toggle" aria-label="Idioma Inglês" title="Switch to English" onclick="setLanguage('en')" id="btn-en">EN</button>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2 data-pt="Sobre Mim" data-en="About Me">Sobre Mim</h2>
+    <div class="card">
+      <p data-pt="Olá! Sou Kauã, estudante de Redes de Computadores pelo SENAI. Tenho experiência prática com Zabbix, PFSense, AWS, Azure e estou desenvolvendo projetos voltados à cibersegurança e automação de infraestrutura."
+         data-en="Hello! I'm Kauã, a Computer Networks student at SENAI. I have hands-on experience with Zabbix, PFSense, AWS, Azure, and I'm developing projects focused on cybersecurity and infrastructure automation.">
+        Olá! Sou Kauã, estudante de Redes de Computadores pelo SENAI. Tenho experiência prática com Zabbix, PFSense, AWS, Azure e estou desenvolvendo projetos voltados à cibersegurança e automação de infraestrutura.
+      </p>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 data-pt="Projetos" data-en="Projects">Projetos</h2>
+
+    <div class="card">
+      <h3 data-pt="Zabbix - Monitoramento" data-en="Zabbix - Monitoring">Zabbix - Monitoramento</h3>
+      <p data-pt="Monitoramento completo de servidores físicos e máquinas virtuais com Zabbix."
+         data-en="Complete monitoring of physical servers and virtual machines with Zabbix.">
+        Monitoramento completo de servidores físicos e máquinas virtuais com Zabbix.
+      </p>
+      <p><a href="https://github.com/kauasec/zabbix-monitoramento" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="card">
+      <h3 data-pt="PFsense - Firewall e VLANs" data-en="PFsense - Firewall and VLANs">PFsense - Firewall e VLANs</h3>
+      <p data-pt="Configuração de regras de firewall, NAT e segmentação via VLANs utilizando PFSense."
+         data-en="Firewall rules configuration, NAT and segmentation via VLANs using PFSense.">
+        Configuração de regras de firewall, NAT e segmentação via VLANs utilizando PFSense.
+      </p>
+      <p><a href="https://github.com/kauasec/pfsense-config" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="card">
+      <h3 data-pt="Infraestrutura AWS Escalável" data-en="Scalable AWS Infrastructure">Infraestrutura AWS Escalável</h3>
+      <p data-pt="Projeto com VPCs, EC2, RDS e monitoramento baseado em boas práticas da AWS."
+         data-en="Project with VPCs, EC2, RDS and monitoring based on AWS best practices.">
+        Projeto com VPCs, EC2, RDS e monitoramento baseado em boas práticas da AWS.
+      </p>
+      <p><a href="https://github.com/kauasec/aws-infra" target="_blank">GitHub</a></p>
+    </div>
+
+    <div class="card">
+      <h3 data-pt="Banco de Dados MySQL na Azure" data-en="MySQL Database on Azure">Banco de Dados MySQL na Azure</h3>
+      <p data-pt="Integração entre backend Flask e banco MySQL hospedado em nuvem Azure."
+         data-en="Integration between Flask backend and MySQL database hosted on Azure cloud.">
+        Integração entre backend Flask e banco MySQL hospedado em nuvem Azure.
+      </p>
+      <p><a href="https://github.com/kauasec/azure-mysql" target="_blank">GitHub</a></p>
+    </div>
+  </section>
+
+  <section id="certificacoes">
+    <h2 data-pt="Certificações" data-en="Certifications">Certificações</h2>
+    <div class="card">
+      <ul class="badges">
+        <li>
+          <img src="https://img.shields.io/badge/AWS-Cloud_Practitioner-yellow?logo=amazonaws&style=for-the-badge" alt="AWS Cloud Practitioner Badge" title="AWS Cloud Practitioner Foundational" />
+        </li>
+        <li>
+          <img src="https://img.shields.io/badge/CCNA-Introduction_to_Networks-blue?logo=cisco&style=for-the-badge" alt="CCNA Introduction to Networks Badge" title="CCNA Introduction to Networks" />
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2 data-pt="Contato" data-en="Contact">Contato</h2>
+    <div class="card">
+      <p data-pt="Email:" data-en="Email:">Email: <a href="mailto:kaua0257@gmail.com">kaua0257@gmail.com</a></p>
+      <p data-pt="LinkedIn:" data-en="LinkedIn:">LinkedIn: <a href="https://linkedin.com/in/kauasec" target="_blank">linkedin.com/in/kauasec</a></p>
+      <p data-pt="GitHub:" data-en="GitHub:">GitHub: <a href="https://github.com/kauasec" target="_blank">github.com/kauasec</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kauã Soares. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Tema claro/escuro com ícone dinâmico
+    function toggleTheme() {
+      document.body.classList.toggle('light-theme');
+      const icon = document.getElementById('theme-icon');
+      if (document.body.classList.contains('light-theme')) {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+      }
+    }
+
+    // Idioma
+    let currentLang = 'pt';
+
+    function setLanguage(lang) {
+      if (lang !== 'pt' && lang !== 'en') return;
+      currentLang = lang;
+      document.documentElement.lang = lang === 'pt' ? 'pt-br' : 'en';
+
+      document.querySelectorAll('[data-pt]').forEach(el => {
+        el.textContent = el.getAttribute(lang === 'pt' ? 'data-pt' : 'data-en');
+      });
+
+      // Atualiza o estilo dos botões para indicar o idioma ativo
+      document.getElementById('btn-pt').style.fontWeight = lang === 'pt' ? 'bold' : 'normal';
+      document.getElementById('btn-en').style.fontWeight = lang === 'en' ? 'bold' : 'normal';
+    }
+
+    // Inicializa com português
+    window.addEventListener('DOMContentLoaded', () => {
+      setLanguage('pt');
+    });
+  </script>
 </body>
 </html>
